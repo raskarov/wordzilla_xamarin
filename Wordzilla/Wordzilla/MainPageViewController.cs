@@ -14,7 +14,8 @@ namespace Wordzilla
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
+			var prog = UICustomProgressBar.Create ();
+			Console.WriteLine (prog.Frame.Width);
 		}
 
 		//int nextPageState=1;

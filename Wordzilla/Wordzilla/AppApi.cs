@@ -99,14 +99,16 @@ namespace Wordzilla
 			return JsonConvert.DeserializeObject<StudentManagment.Words.Areas.api.Models.Sheet.TableModel>(Request(@"Sheet/GetSheets?dbUserId={dbUserId}", DataFormat.Json, Method.GET, parameters).Content);
 		}
 
-		public static StudentManagment.Words.Areas.api.Models.Sheet.EditModel GetEdit(int id,int groupId, int typeId)
+		public static StudentManagment.Words.Areas.api.Models.Sheet.EditModel GetEdit(int id,long groupId, int typeId)
 		{
 			Parameter[] parameters = { 
 				new Parameter { Name = "id", Value = id, Type = ParameterType.UrlSegment },
 				new Parameter { Name = "groupId", Value = groupId, Type = ParameterType.UrlSegment },
 				new Parameter { Name = "typeId", Value = typeId, Type = ParameterType.UrlSegment }
 			};
-			return JsonConvert.DeserializeObject<StudentManagment.Words.Areas.api.Models.Sheet.EditModel>(Request(@"Sheet/_GetEdit?id={id}&groupId={groupId}&typeId={typeId}", DataFormat.Json, Method.GET, parameters).Content);
+
+			var respData = Request (@"Sheet/_GetEdit?id={id}&groupId={groupId}&typeId={typeId}", DataFormat.Json, Method.GET, parameters).Content;
+			return JsonConvert.DeserializeObject<StudentManagment.Words.Areas.api.Models.Sheet.EditModel>(respData);
 		}
 
 		public static bool DeleteSheet(int id)

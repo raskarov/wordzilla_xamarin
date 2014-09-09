@@ -13,9 +13,10 @@ namespace Wordzilla
 		{
 		}
 
-		private int _sheetId;
+		private StudentManagment.Words.Areas.api.Models.Sheet.MiniModel _selSheet;
 		private TableSource _dsmysheets;
 		private TableSource _dsteachersheets;
+		private long _groupId;
 
 		public override void ViewDidLoad ()
 		{
@@ -31,12 +32,14 @@ namespace Wordzilla
 			StudentManagment.Words.Areas.api.Models.Sheet.TableModel userData = AppApi.GetSheets ();
 
 			var teachertable = userData.DataTeacher;
-			UITeacherCards.Source = _dsteachersheets = new TableSource (teachertable, this);
+			UITeacherCards.Source = _dsteachersheets = new TableSource (teachertable, 2, this);
 			UITeacherCards.RegisterNibForCellReuse (UIListWordCell.Nib, UIListWordCell.Key);
 
 			var mytable = userData.DataStudent;
-			UIMyCards.Source = _dsmysheets = new TableSource (mytable, this);
+			UIMyCards.Source = _dsmysheets = new TableSource (mytable, 1, this);
 			UIMyCards.RegisterNibForCellReuse (UIListWordCell.Nib, UIListWordCell.Key);
+
+			_groupId = userData.GroupId;
 		}
 
 		private void UpdateData ()
@@ -64,19 +67,18 @@ namespace Wordzilla
 					UIMyCards.ReloadData ();
 				}, TaskScheduler.FromCurrentSynchronizationContext ()
 			);
-
 		}
 
-		private void Edit (int selectedSheet)
+		private void Edit (StudentManagment.Words.Areas.api.Models.Sheet.MiniModel selectedSheet)
 		{
 			// for editing
-			_sheetId = selectedSheet;
+			_selSheet = selectedSheet;
 			PerformSegue ("EditSheet", this);
 		}
 
-		private void Training (int selectedSheet)
+		private void Training (StudentManagment.Words.Areas.api.Models.Sheet.MiniModel selectedSheet)
 		{
-			_sheetId = selectedSheet;
+			_selSheet = selectedSheet;
 			PerformSegue ("TrainingPage", this);
 		}
 
@@ -85,14 +87,26 @@ namespace Wordzilla
 
 		}
 
+		partial void AddNewWordsVerbs (UIButton sender)
+		{
+			if (sender.Tag == 1)
+				_selSheet = new StudentManagment.Words.Areas.api.Models.Sheet.MiniModel ()
+			{ Type = "Слова" };
+			else
+				_selSheet = new StudentManagment.Words.Areas.api.Models.Sheet.MiniModel ()
+			{ Type = "Глаголы" };
+
+			PerformSegue ("EditSheet", this);
+		}
+
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 		{
 			switch (segue.Identifier) {
 			case "TrainingPage":
-				((TrainingViewController)segue.DestinationViewController).ConfigureView (_sheetId);
+				((TrainingViewController)segue.DestinationViewController).ConfigureView (_selSheet);
 				break;
 			case "EditSheet":
-				((EditWordsController)segue.DestinationViewController).ConfigureView (_sheetId);
+				((EditWordsController)segue.DestinationViewController).ConfigureView (_groupId,_selSheet);
 				break;
 			}
 		}
@@ -101,15 +115,17 @@ namespace Wordzilla
 		{
 			List<StudentManagment.Words.Areas.api.Models.Sheet.MiniModel> tableItems;
 			UserPageViewController controller;
+			int mode;
 
 			public IList<StudentManagment.Words.Areas.api.Models.Sheet.MiniModel> Objects {
 				get { return tableItems; }
 			}
 
-			public TableSource (List<StudentManagment.Words.Areas.api.Models.Sheet.MiniModel> items, UserPageViewController controller)
+			public TableSource (List<StudentManagment.Words.Areas.api.Models.Sheet.MiniModel> items, int mode, UserPageViewController controller)
 			{
 				tableItems = items;
 				this.controller = controller;
+				this.mode = mode;
 			}
 
 			public override int RowsInSection (UITableView tableview, int section)
@@ -129,18 +145,29 @@ namespace Wordzilla
 				cell.Title = oneItem.Name;
 				cell.Info = oneItem.Type + " " + oneItem.DateCreate + " " + (oneItem.IsNew != null ? "new" : "");
 				cell.EditBtmEvent = (object sender, EventArgs e) => {
-					((UserPageViewController)controller).Edit (tableItems [indexPath.Row].Id);
+					((UserPageViewController)controller).Edit (tableItems [indexPath.Row]);
 				};
 				cell.TrainingBtmEvent = (object sender, EventArgs e) => {
-					((UserPageViewController)controller).Training (tableItems [indexPath.Row].Id);
+					controller.Training (tableItems [indexPath.Row]);
 				};
 
-
+				cell.DeleteBtmEvent = (object sender, EventArgs e) => {
+					try{
+					if (!AppApi.DeleteSheet (tableItems [indexPath.Row].Id))
+						return;
+					tableItems.RemoveAt (indexPath.Row);
+					tableView.DeleteRows (new NSIndexPath[]{ indexPath }, UITableViewRowAnimation.Fade);
+					}catch{}
+				};
 
 				//Customizing the progress bar
 				float sumWordAnswers = oneItem.Bad + oneItem.Good + oneItem.Nearly + oneItem.No;
-				var width = cell.ProgressBarPlace.Width;
-				var height = cell.ProgressBarPlace.Height;
+				var customProgressBar = UICustomProgressBar.Create ();
+				customProgressBar.Frame = new System.Drawing.RectangleF (3, 40, 160, 4);
+				//var width = cell.ProgressBarPlace.Width;
+				//var height = cell.ProgressBarPlace.Height;
+				var width = customProgressBar.Frame.Width;
+				var height = customProgressBar.Frame.Height;
 
 				if (sumWordAnswers != 0) {
 
@@ -149,16 +176,36 @@ namespace Wordzilla
 					var noWidth = (oneItem.No / sumWordAnswers) * width;
 					var nearlyWidth = (oneItem.Nearly / sumWordAnswers) * width;
 
-					cell.ProgressBarRed = new System.Drawing.RectangleF (0, 0, badWidth, height);
+					/*	cell.ProgressBarRed = new System.Drawing.RectangleF (0, 0, badWidth, height);
 					cell.ProgressBarYellow = new System.Drawing.RectangleF (badWidth, 0, nearlyWidth, height);
 					cell.ProgressBarGreen = new System.Drawing.RectangleF (badWidth + nearlyWidth, 0, goodWidth, height);
-					cell.ProgressBarSilver = new System.Drawing.RectangleF (badWidth + nearlyWidth + goodWidth, 0, noWidth, height);
+					cell.ProgressBarSilver = new System.Drawing.RectangleF (badWidth + nearlyWidth + goodWidth, 0, noWidth, height);*/
+					customProgressBar.ProgressBarRed = new System.Drawing.RectangleF (0, 2, badWidth, height);
+					customProgressBar.ProgressBarYellow = new System.Drawing.RectangleF (badWidth, 2, nearlyWidth, height);
+					customProgressBar.ProgressBarGreen = new System.Drawing.RectangleF (badWidth + nearlyWidth, 2, goodWidth, height);
+					customProgressBar.ProgressBarSilver = new System.Drawing.RectangleF (badWidth + nearlyWidth + goodWidth, 2, noWidth, height);
+
 				} else {
-					cell.ProgressBarRed = new System.Drawing.RectangleF (0, 0, 0, 0);
+					/*cell.ProgressBarRed = new System.Drawing.RectangleF (0, 0, 0, 0);
 					cell.ProgressBarGreen = new System.Drawing.RectangleF (0, 0, 0, 0);
 					cell.ProgressBarYellow = new System.Drawing.RectangleF (0, 0, 0, 0);
-					cell.ProgressBarSilver = new System.Drawing.RectangleF (0, 0, width, height);
+					cell.ProgressBarSilver = new System.Drawing.RectangleF (0, 0, width, height);*/
+
+					customProgressBar.ProgressBarRed = new System.Drawing.RectangleF (0, 0, 0, 0);
+					customProgressBar.ProgressBarYellow = new System.Drawing.RectangleF (0, 0, 0, 0);
+					customProgressBar.ProgressBarGreen = new System.Drawing.RectangleF (0, 0, 0, 0);
+					customProgressBar.ProgressBarSilver = new System.Drawing.RectangleF (0, 0, width, height);
+
+
+					// hide buttons if list does not contain words
+					cell.ListOfWordsButtonHidden = true;
+					cell.TraininButtonHidden = true;
 				}
+
+				if (mode == 2)
+					cell.TeacherEditButtonsHidden = true;
+
+				cell.AddSubview (customProgressBar);
 				return cell;
 			}
 

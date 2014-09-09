@@ -39,6 +39,13 @@ namespace Wordzilla
 			set {UIVoice.TouchUpInside+= value; }
 		}
 
+		public bool DisableControls{
+			set{
+				UIDelete.Hidden = value;
+				UIEdit.Hidden = value;
+			}
+		}
+
 		public long Id {
 			get;
 			set;

@@ -43,8 +43,31 @@ namespace Wordzilla
 			set {UITraining.TouchUpInside+= value; }
 		}
 
+		public bool TraininButtonHidden{
+			set{UITraining.Hidden=value; }
+			get{ return UITraining.Hidden; }
+		}
+
+		public bool ListOfWordsButtonHidden{
+			set{UIListOfWords.Hidden=value; }
+			get{ return UIListOfWords.Hidden; }
+		}
+
+		public bool TeacherEditButtonsHidden{
+			set {
+				UIDelete.Hidden = value;
+				UIEdit.Hidden = value;
+				UIDelete.Hidden = value;
+				UICopy.Hidden = value;
+			}
+		}
+
 		public EventHandler EditBtmEvent {
 			set {UIEdit.TouchUpInside+= value; }
+		}
+
+		public EventHandler DeleteBtmEvent {
+			set {UIDelete.TouchUpInside+= value; }
 		}
 
 		public static UIListWordCell Create ()
@@ -52,48 +75,7 @@ namespace Wordzilla
 			return (UIListWordCell)Nib.Instantiate (null, null) [0];
 		}
 
-		// progressbar
-		public RectangleF ProgressBarPlace {
-			get {
-				return UICustomProgress.Frame;
-			}
-			set{
-				UICustomProgress.Frame=value;
-			}
-		}
-		public RectangleF ProgressBarGreen {
-			get {
-				return UICustomGreen.Frame;
-			}
-			set{
-				UICustomGreen.Frame=value;
-			}
-		}
-		public RectangleF ProgressBarRed {
-			get {
-				return UICustomRed.Frame;
-			}
-			set{
-				UICustomRed.Frame=value;
-			}
-		}
-		public RectangleF ProgressBarYellow {
-			get {
-				return UICustomYellow.Frame;
-			}
-			set{
-				UICustomYellow.Frame=value;
-			}
-		}
-		public RectangleF ProgressBarSilver {
-			get {
-				return UICustomSilver.Frame;
-			}
-			set{
-				UICustomSilver.Frame=value;
-			}
-		}
-		// /progressbar
+
 	}
 }
 

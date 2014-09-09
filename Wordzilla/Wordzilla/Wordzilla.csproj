@@ -140,11 +140,16 @@
     <Compile Include="EditWordViewController.designer.cs">
       <DependentUpon>EditWordViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UICustomProgressBar.cs" />
+    <Compile Include="UI\UICustomProgressBar.designer.cs">
+      <DependentUpon>UICustomProgressBar.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="UI\UIListWordCell.xib" />
     <InterfaceDefinition Include="UI\UIWordEdit_iPhone.xib" />
+    <InterfaceDefinition Include="UI\UICustomProgressBar.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>

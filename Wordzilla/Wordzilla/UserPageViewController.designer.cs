@@ -38,6 +38,10 @@ namespace Wordzilla
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView UITeacherCards { get; set; }
 
+		[Action ("AddNewWordsVerbs:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void AddNewWordsVerbs (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (UICustomProccessBar != null) {

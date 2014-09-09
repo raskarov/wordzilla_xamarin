@@ -13,25 +13,19 @@ namespace Wordzilla
 	partial class UIListWordCell
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIView UICustomGreen { get; set; }
+		MonoTouch.UIKit.UIButton UICopy { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIView UICustomProgress { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIView UICustomRed { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIView UICustomSilver { get; set; }
-
-		[Outlet]
-		MonoTouch.UIKit.UIView UICustomYellow { get; set; }
+		MonoTouch.UIKit.UIButton UIDelete { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton UIEdit { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel UIInfo { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton UIListOfWords { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel UITitle { get; set; }
@@ -41,39 +35,9 @@ namespace Wordzilla
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (UIInfo != null) {
-				UIInfo.Dispose ();
-				UIInfo = null;
-			}
-
-			if (UITitle != null) {
-				UITitle.Dispose ();
-				UITitle = null;
-			}
-
-			if (UICustomProgress != null) {
-				UICustomProgress.Dispose ();
-				UICustomProgress = null;
-			}
-
-			if (UICustomRed != null) {
-				UICustomRed.Dispose ();
-				UICustomRed = null;
-			}
-
-			if (UICustomGreen != null) {
-				UICustomGreen.Dispose ();
-				UICustomGreen = null;
-			}
-
-			if (UICustomSilver != null) {
-				UICustomSilver.Dispose ();
-				UICustomSilver = null;
-			}
-
-			if (UICustomYellow != null) {
-				UICustomYellow.Dispose ();
-				UICustomYellow = null;
+			if (UIDelete != null) {
+				UIDelete.Dispose ();
+				UIDelete = null;
 			}
 
 			if (UIEdit != null) {
@@ -81,9 +45,29 @@ namespace Wordzilla
 				UIEdit = null;
 			}
 
+			if (UIInfo != null) {
+				UIInfo.Dispose ();
+				UIInfo = null;
+			}
+
+			if (UIListOfWords != null) {
+				UIListOfWords.Dispose ();
+				UIListOfWords = null;
+			}
+
+			if (UITitle != null) {
+				UITitle.Dispose ();
+				UITitle = null;
+			}
+
 			if (UITraining != null) {
 				UITraining.Dispose ();
 				UITraining = null;
+			}
+
+			if (UICopy != null) {
+				UICopy.Dispose ();
+				UICopy = null;
 			}
 		}
 	}

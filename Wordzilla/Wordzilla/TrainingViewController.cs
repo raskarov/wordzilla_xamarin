@@ -13,10 +13,9 @@ namespace Wordzilla
 
 		// index of card
 		int index=0;
-		// id sheet
-		long sheetId;
 
 		StudentManagment.Words.Areas.api.Models.Words.MiniModel[] data;
+		private StudentManagment.Words.Areas.api.Models.Sheet.MiniModel _sheet;
 
 		public override void ViewDidLoad ()
 		{
@@ -31,10 +30,10 @@ namespace Wordzilla
 			UIRussian.Text = data [index].Russian;
 		}
 
-		public void ConfigureView (long id)
+		public void ConfigureView (StudentManagment.Words.Areas.api.Models.Sheet.MiniModel sheet)
 		{
-			sheetId = id;
-			data = AppApi.GetSequenceExternal (sheetId).Data.ToArray ();
+			_sheet = sheet;
+			data = AppApi.GetSequenceExternal (sheet.Id).Data.ToArray ();
 		}
 
 		partial void AnswerTouch (UIButton sender)
@@ -57,14 +56,14 @@ namespace Wordzilla
 				break;
 			}
 
-			AppApi.SetLearnWordExternal(sheetId,data[index].WordId,answer);
+			AppApi.SetLearnWordExternal(_sheet.Id,data[index].WordId,answer);
 
 			index++;
 
 			//If limit is the repeat loop boot
 			if(index>=data.Length){
 				index=0;
-				data = AppApi.GetSequenceExternal (sheetId).Data.ToArray ();
+				data = AppApi.GetSequenceExternal (_sheet.Id).Data.ToArray ();
 			}
 
 			ShowData();
