@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace StudentManagment.Words.Areas.api.Models.Sheet
 {
+	[Serializable]
     public class TableModel
     {
         public Int32 BadLearn { get; set; }

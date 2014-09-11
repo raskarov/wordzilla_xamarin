@@ -3,6 +3,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Wordzilla
 {
@@ -16,7 +17,8 @@ namespace Wordzilla
 
 		private StudentManagment.Words.Areas.api.Models.Words.MiniModel _selectWord;
 		private StudentManagment.Words.Areas.api.Models.Sheet.MiniModel _selectSheet;
-		private int _controllerMode; long _groupId;
+		private int _controllerMode;
+		private long _groupId;
 
 		public override void ViewWillAppear (bool animation)
 		{
@@ -97,7 +99,7 @@ namespace Wordzilla
 			{
 				if (section == 0)
 					return 1;
-				return model.Data==null?0:model.Data.Count;
+				return model.Data == null ? 0 : model.Data.Count;
 			}
 
 			public override int NumberOfSections (UITableView tableView)
@@ -108,7 +110,7 @@ namespace Wordzilla
 			public override string TitleForHeader (UITableView tableView, int section)
 			{
 				if (section == 0) {
-					if(editModel!=null)
+					if (editModel != null)
 						return editModel.DateCreate;
 				}
 				return "Слова";
@@ -119,25 +121,26 @@ namespace Wordzilla
 				if (indexPath.Section == 0) {
 					var infocell = new UITableViewCell ();
 					if (controller._controllerMode == 2) {
+						var inform = AppApi.GetSheets ().DataStudent.First (x => x.Id == editModel.SheetId);
 						//Customizing the progress bar
-						float sumWordAnswers = 0;//oneItem.Bad + oneItem.Good + oneItem.Nearly + oneItem.No;
+						float sumWordAnswers = inform.Bad + inform.Good + inform.Nearly + inform.No;
 						var customProgressBar = UICustomProgressBar.Create ();
-						customProgressBar.Frame = new System.Drawing.RectangleF (3, 40, 160, 4);
+						customProgressBar.Frame = new System.Drawing.RectangleF (10, 40, UIScreen.MainScreen.Bounds.Width-20, 4);
 						var width = customProgressBar.Frame.Width;
 						var height = customProgressBar.Frame.Height;
 
 						if (sumWordAnswers != 0) {
 
-							/*	var badWidth = (oneItem.Bad / sumWordAnswers) * width;
-						var goodWidth = (oneItem.Good / sumWordAnswers) * width;
-						var noWidth = (oneItem.No / sumWordAnswers) * width;
-						var nearlyWidth = (oneItem.Nearly / sumWordAnswers) * width;
+							var badWidth = (inform.Bad / sumWordAnswers) * width;
+							var goodWidth = (inform.Good / sumWordAnswers) * width;
+							var noWidth = (inform.No / sumWordAnswers) * width;
+							var nearlyWidth = (inform.Nearly / sumWordAnswers) * width;
 
-						customProgressBar.ProgressBarRed = new System.Drawing.RectangleF (0, 2, badWidth, height);
-						customProgressBar.ProgressBarYellow = new System.Drawing.RectangleF (badWidth, 2, nearlyWidth, height);
-						customProgressBar.ProgressBarGreen = new System.Drawing.RectangleF (badWidth + nearlyWidth, 2, goodWidth, height);
-						customProgressBar.ProgressBarSilver = new System.Drawing.RectangleF (badWidth + nearlyWidth + goodWidth, 2, noWidth, height);
-*/
+							customProgressBar.ProgressBarRed = new System.Drawing.RectangleF (0, 2, badWidth, height);
+							customProgressBar.ProgressBarYellow = new System.Drawing.RectangleF (badWidth, 2, nearlyWidth, height);
+							customProgressBar.ProgressBarGreen = new System.Drawing.RectangleF (badWidth + nearlyWidth, 2, goodWidth, height);
+							customProgressBar.ProgressBarSilver = new System.Drawing.RectangleF (badWidth + nearlyWidth + goodWidth, 2, noWidth, height);
+
 						} else {
 							customProgressBar.ProgressBarRed = new System.Drawing.RectangleF (0, 0, 0, 0);
 							customProgressBar.ProgressBarYellow = new System.Drawing.RectangleF (0, 0, 0, 0);
@@ -152,15 +155,15 @@ namespace Wordzilla
 						if (editModel != null)
 							title.Text = editModel.Name;
 
-						UIButton save = new UIButton (new System.Drawing.RectangleF (title.Frame.Right+5, 35, 100, 20));
-						save.SetTitle("Сохранить",UIControlState.Normal);
+						UIButton save = new UIButton (new System.Drawing.RectangleF (title.Frame.Right + 5, 35, 100, 20));
+						save.SetTitle ("Сохранить", UIControlState.Normal);
 						save.BackgroundColor = UIColor.FromRGB (15, 83, 250);
 
 						save.TouchUpInside += (object sender, EventArgs e) => {
 
 						};
 
-						infocell.AddSubviews (new UIView[]{title,save});
+						infocell.AddSubviews (new UIView[]{ title, save });
 					}
 
 
@@ -188,8 +191,8 @@ namespace Wordzilla
 					tableView.DeleteRows (new NSIndexPath[]{ indexPath }, UITableViewRowAnimation.Fade);
 				};
 
-				if(controller._controllerMode==2)
-				cell.DisableControls = true;
+				if (controller._controllerMode == 2)
+					cell.DisableControls = true;
 
 				return cell;
 			}

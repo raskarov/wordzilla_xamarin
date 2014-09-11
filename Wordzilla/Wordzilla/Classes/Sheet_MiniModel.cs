@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace StudentManagment.Words.Areas.api.Models.Sheet
 {
+	[Serializable]
     public class MiniModel
     {
         public Int32 Id { get; set; }

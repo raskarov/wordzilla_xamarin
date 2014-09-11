@@ -19,6 +19,24 @@ namespace Wordzilla
 			get;
 			set;
 		}
+
+		public override bool FinishedLaunching (UIApplication application, NSDictionary launcOptions)
+		{
+			//UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent,true);
+			//UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
+
+			//if (Api.CheckExistToken ()) {
+			//if (!AppApi.Login())
+			//	return true;
+
+		/*	UIStoryboard board = UIStoryboard.FromName ("MainStoryboard", null);
+			var vc = (UIViewController)board.InstantiateViewController("UserPage");
+			this.Window.RootViewController = vc;*/
+
+		//	Window.RootViewController.NavigationController.PopToViewController (UserPageViewController, false);
+
+			return true;
+		}
 		
 		// This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.

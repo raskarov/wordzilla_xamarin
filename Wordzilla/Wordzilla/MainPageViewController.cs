@@ -14,13 +14,13 @@ namespace Wordzilla
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			var prog = UICustomProgressBar.Create ();
-			Console.WriteLine (prog.Frame.Width);
+			if (AppApi.Login())
+			PerformSegue("UserPage",this);
 		}
 
 		//int nextPageState=1;
 		partial void NextPage (UIButton sender)
-		{
+		{	
 			AppApi.Login();
 			if (sender.Tag.ToString() == "UIOk"){
 				AppApi.SetGroup(int.Parse(UIGroupPass.Text));

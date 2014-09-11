@@ -25,8 +25,8 @@ namespace Wordzilla
 			get {
 				return UITitle.Text;
 			}
-			set{
-				UITitle.Text=value;
+			set {
+				UITitle.Text = value;
 			}
 		}
 
@@ -34,26 +34,30 @@ namespace Wordzilla
 			get {
 				return UIInfo.Text;
 			}
-			set{
-				UIInfo.Text=value;
+			set {
+				UIInfo.Text = value;
 			}
 		}
 
 		public EventHandler TrainingBtmEvent {
-			set {UITraining.TouchUpInside+= value; }
+			set { UITraining.TouchUpInside += value; }
 		}
 
-		public bool TraininButtonHidden{
-			set{UITraining.Hidden=value; }
+		public EventHandler ListOfWordsBtmEvent {
+			set { UIListOfWords.TouchUpInside += value; }
+		}
+
+		public bool TraininButtonHidden {
+			set{ UITraining.Hidden = value; }
 			get{ return UITraining.Hidden; }
 		}
 
-		public bool ListOfWordsButtonHidden{
-			set{UIListOfWords.Hidden=value; }
+		public bool ListOfWordsButtonHidden {
+			set{ UIListOfWords.Hidden = value; }
 			get{ return UIListOfWords.Hidden; }
 		}
 
-		public bool TeacherEditButtonsHidden{
+		public bool TeacherEditButtonsHidden {
 			set {
 				UIDelete.Hidden = value;
 				UIEdit.Hidden = value;
@@ -63,19 +67,17 @@ namespace Wordzilla
 		}
 
 		public EventHandler EditBtmEvent {
-			set {UIEdit.TouchUpInside+= value; }
+			set { UIEdit.TouchUpInside += value; }
 		}
 
 		public EventHandler DeleteBtmEvent {
-			set {UIDelete.TouchUpInside+= value; }
+			set { UIDelete.TouchUpInside += value; }
 		}
 
 		public static UIListWordCell Create ()
 		{
 			return (UIListWordCell)Nib.Instantiate (null, null) [0];
 		}
-
-
 	}
 }
 

@@ -32,6 +32,9 @@ namespace Wordzilla
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton UIVoice { get; set; }
+
+		[Action ("SpeakWord:")]
+		partial void SpeakWord (MonoTouch.UIKit.UIButton sender);
 		
 		void ReleaseDesignerOutlets ()
 		{

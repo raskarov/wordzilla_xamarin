@@ -17,35 +17,47 @@ namespace Wordzilla
 		private TableSource _dsmysheets;
 		private TableSource _dsteachersheets;
 		private long _groupId;
+		private int _selectMode=1;
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 			//ConfigureProccess ();
 
-			NavigationItem.SetRightBarButtonItem (new UIBarButtonItem () { Title = "Обновить" }, true);
+			/*NavigationItem.SetRightBarButtonItem (new UIBarButtonItem () { Title = "Обновить" }, true);
 			NavigationItem.RightBarButtonItem.Clicked += (s, e) => {
 				UpdateData ();
-			};
+			};*/
 
 			// init data
-			StudentManagment.Words.Areas.api.Models.Sheet.TableModel userData = AppApi.GetSheets ();
+		}
 
-			var teachertable = userData.DataTeacher;
-			UITeacherCards.Source = _dsteachersheets = new TableSource (teachertable, 2, this);
-			UITeacherCards.RegisterNibForCellReuse (UIListWordCell.Nib, UIListWordCell.Key);
-
-			var mytable = userData.DataStudent;
-			UIMyCards.Source = _dsmysheets = new TableSource (mytable, 1, this);
-			UIMyCards.RegisterNibForCellReuse (UIListWordCell.Nib, UIListWordCell.Key);
-
-			_groupId = userData.GroupId;
+		public override void ViewWillAppear (bool animation)
+		{
+			base.ViewWillAppear (animation);
+			UpdateData ();
 		}
 
 		private void UpdateData ()
 		{
 			// update data
-			StudentManagment.Words.Areas.api.Models.Sheet.TableModel userData = null;//AppApi.GetSheets ();
+			StudentManagment.Words.Areas.api.Models.Sheet.TableModel userData = null;
+			if (_dsteachersheets == null || _dsmysheets == null) {
+				userData = AppApi.GetSheets ();
+
+				var teachertable = userData.DataTeacher;
+				UITeacherCards.Source = _dsteachersheets = new TableSource (teachertable, 2, this);
+				UITeacherCards.RegisterNibForCellReuse (UIListWordCell.Nib, UIListWordCell.Key);
+
+				var mytable = userData.DataStudent;
+				UIMyCards.Source = _dsmysheets = new TableSource (mytable, 1, this);
+				UIMyCards.RegisterNibForCellReuse (UIListWordCell.Nib, UIListWordCell.Key);
+
+				_groupId = userData.GroupId;
+				return;
+			}
+
+			//AppApi.GetSheets ();
 
 			Task.Factory.StartNew (
 				() => {
@@ -106,7 +118,7 @@ namespace Wordzilla
 				((TrainingViewController)segue.DestinationViewController).ConfigureView (_selSheet);
 				break;
 			case "EditSheet":
-				((EditWordsController)segue.DestinationViewController).ConfigureView (_groupId,_selSheet);
+				((EditWordsController)segue.DestinationViewController).ConfigureView (_groupId, _selSheet,_selectMode);
 				break;
 			}
 		}
@@ -145,19 +157,26 @@ namespace Wordzilla
 				cell.Title = oneItem.Name;
 				cell.Info = oneItem.Type + " " + oneItem.DateCreate + " " + (oneItem.IsNew != null ? "new" : "");
 				cell.EditBtmEvent = (object sender, EventArgs e) => {
-					((UserPageViewController)controller).Edit (tableItems [indexPath.Row]);
+					controller._selectMode=1;
+					controller.Edit (tableItems [indexPath.Row]);
 				};
 				cell.TrainingBtmEvent = (object sender, EventArgs e) => {
 					controller.Training (tableItems [indexPath.Row]);
 				};
 
 				cell.DeleteBtmEvent = (object sender, EventArgs e) => {
-					try{
-					if (!AppApi.DeleteSheet (tableItems [indexPath.Row].Id))
-						return;
-					tableItems.RemoveAt (indexPath.Row);
-					tableView.DeleteRows (new NSIndexPath[]{ indexPath }, UITableViewRowAnimation.Fade);
-					}catch{}
+					try {
+						if (!AppApi.DeleteSheet (tableItems [indexPath.Row].Id))
+							return;
+						tableItems.RemoveAt (indexPath.Row);
+						tableView.DeleteRows (new NSIndexPath[]{ indexPath }, UITableViewRowAnimation.Fade);
+					} catch {
+					}
+				};
+
+				cell.ListOfWordsBtmEvent = (object sender, EventArgs e) => {
+					controller._selectMode=2;
+					controller.Edit (tableItems [indexPath.Row]);
 				};
 
 				//Customizing the progress bar

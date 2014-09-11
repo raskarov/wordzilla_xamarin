@@ -4,6 +4,7 @@ using System.Drawing;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Threading.Tasks;
 
 namespace Wordzilla
 {
@@ -37,6 +38,20 @@ namespace Wordzilla
 
 		public EventHandler VoiceBtmEvent {
 			set {UIVoice.TouchUpInside+= value; }
+		}
+
+		partial void SpeakWord (MonoTouch.UIKit.UIButton sender){
+			string url = string.Empty;
+			string word=English;
+			Task.Factory.StartNew (
+				() => {
+					url = AppApi.Mp3Url (word);
+				}
+			).ContinueWith (
+				t => {
+					Envi.Sounds.PlaySound (url);
+
+				});
 		}
 
 		public bool DisableControls{

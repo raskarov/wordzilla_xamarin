@@ -16,23 +16,7 @@ namespace Wordzilla
 	{
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView UICustomProccessBar { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
 		UITableView UIMyCards { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView UIProccessGreen { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView UIProccessRed { get; set; }
-
-		[Outlet]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		UIView UIProccessYellow { get; set; }
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
@@ -44,25 +28,9 @@ namespace Wordzilla
 
 		void ReleaseDesignerOutlets ()
 		{
-			if (UICustomProccessBar != null) {
-				UICustomProccessBar.Dispose ();
-				UICustomProccessBar = null;
-			}
 			if (UIMyCards != null) {
 				UIMyCards.Dispose ();
 				UIMyCards = null;
-			}
-			if (UIProccessGreen != null) {
-				UIProccessGreen.Dispose ();
-				UIProccessGreen = null;
-			}
-			if (UIProccessRed != null) {
-				UIProccessRed.Dispose ();
-				UIProccessRed = null;
-			}
-			if (UIProccessYellow != null) {
-				UIProccessYellow.Dispose ();
-				UIProccessYellow = null;
 			}
 			if (UITeacherCards != null) {
 				UITeacherCards.Dispose ();

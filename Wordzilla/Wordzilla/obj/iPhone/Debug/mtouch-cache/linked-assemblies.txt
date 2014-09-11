@@ -1,0 +1,12 @@
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/System.Core.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/SimpleStorage.iOS.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/RestSharp.MonoTouch.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/mscorlib.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/monotouch.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/System.Xml.Linq.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/Wordzilla.exe
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/Newtonsoft.Json.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/Mono.Dynamic.Interpreter.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/System.Xml.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/System.dll
+/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache/Link/System.Runtime.Serialization.dll

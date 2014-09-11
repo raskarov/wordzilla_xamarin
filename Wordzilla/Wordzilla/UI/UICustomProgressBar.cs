@@ -11,12 +11,6 @@ namespace Wordzilla
 	{
 		public static readonly UINib Nib = UINib.FromName ("UICustomProgressBar", NSBundle.MainBundle);
 
-		public void Config (int cardid)
-		{
-
-		}
-
-
 		public UICustomProgressBar (IntPtr handle) : base (handle)
 		{
 

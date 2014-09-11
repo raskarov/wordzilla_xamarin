@@ -1,0 +1,33 @@
+# Version: 7.2.6.28 (606f31a)
+# [first argument, ignore] # /Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/bin/iPhone/Debug/mtouch.exe
+/Developer/MonoTouch/usr/bin/mtouch \
+	-sdkroot \
+	/Applications/Xcode.app/Contents/Developer \
+	--cache \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/obj/iPhone/Debug/mtouch-cache \
+	--nomanifest \
+	--nosign \
+	-dev \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/bin/iPhone/Debug/Wordzilla.app \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Xml.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Core.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll \
+	-r \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Components/restsharp-104.4.0/lib/ios/RestSharp.MonoTouch.dll \
+	-r \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Components/json.net-4.5.11/lib/ios/Newtonsoft.Json.dll \
+	-r \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Components/simple-storage-1.2/lib/ios/SimpleStorage.iOS.dll \
+	-debug \
+	-linksdkonly \
+	-sdk \
+	7.1 \
+	-targetver \
+	7.0 \
+	--abi=armv7 \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Wordzilla/bin/iPhone/Debug/Wordzilla.exe \

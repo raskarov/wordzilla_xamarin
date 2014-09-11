@@ -21,10 +21,12 @@
 	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Components/restsharp-104.4.0/lib/ios/RestSharp.MonoTouch.dll \
 	-r \
 	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Components/json.net-4.5.11/lib/ios/Newtonsoft.Json.dll \
+	-r \
+	/Users/sashavasilev/Dropbox/Development/Xamarin/Wordzilla/Components/simple-storage-1.2/lib/ios/SimpleStorage.iOS.dll \
 	-debug \
 	-nolink \
 	-sdk \
-	7.0 \
+	7.1 \
 	-targetver \
 	7.0 \
 	--abi=i386 \

@@ -7,3 +7,4 @@ RestSharp.MonoTouch.dll
 System.Xml.Linq.dll
 Newtonsoft.Json.dll
 System.Runtime.Serialization.dll
+SimpleStorage.iOS.dll

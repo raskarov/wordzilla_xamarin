@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15D0BF8E0000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1961CC2C0000000000000000 /* UIKit.framework */; };
+		376662C10000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AF76F5F0000000000000000 /* MapKit.framework */; };
+		C99CB5900000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 102AD7F70000000000000000 /* Foundation.framework */; };
+		4ADA20000000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395BA4000000000000000000 /* CoreGraphics.framework */; };
+		E3C2A8B00000000000000000 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 11CD37290000000000000000 /* Default-568h@2x.png */; };
+		236F93230000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27009FC10000000000000000 /* Info.plist */; };
+		119A540D0000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 152B60AB0000000000000000 /* Entitlements.plist */; };
+		3FC514F70000000000000000 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356219500000000000000000 /* MainStoryboard.storyboard */; };
+		3A1F2D600000000000000000 /* UIListWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB039FE0000000000000000 /* UIListWordCell.xib */; };
+		19D2D8B60000000000000000 /* UIWordEdit_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D63E5540000000000000000 /* UIWordEdit_iPhone.xib */; };
+		24531B740000000000000000 /* UICustomProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27E428120000000000000000 /* UICustomProgressBar.xib */; };
+		142CF11F0000000000000000 /* UIOneCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BDFDBD0000000000000000 /* UIOneCard.xib */; };
+		323187B40000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 35C294520000000000000000 /* AppDelegate.h */; };
+		358FB1360000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3920BDD40000000000000000 /* AppDelegate.m */; };
+		E54266C00000000000000000 /* WordzillaViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 11E5330A0000000000000000 /* WordzillaViewController.h */; };
+		23878F040000000000000000 /* WordzillaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27189BA20000000000000000 /* WordzillaViewController.m */; };
+		2354ABE80000000000000000 /* MainPageViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 26E5B8860000000000000000 /* MainPageViewController.h */; };
+		3BE63E020000000000000000 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F774AA00000000000000000 /* MainPageViewController.m */; };
+		1BCCCC740000000000000000 /* UserPageViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DD9120000000000000000 /* UserPageViewController.h */; };
+		3100350C0000000000000000 /* UserPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349141AA0000000000000000 /* UserPageViewController.m */; };
+		10E6C37E0000000000000000 /* TrainingViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1477D01C0000000000000000 /* TrainingViewController.h */; };
+		1444ED000000000000000000 /* TrainingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D5F99E0000000000000000 /* TrainingViewController.m */; };
+		2D0962360000000000000000 /* UIListWordCell.h in Sources */ = {isa = PBXBuildFile; fileRef = 309A6ED40000000000000000 /* UIListWordCell.h */; };
+		5CDD76C00000000000000000 /* UIListWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95EE40A00000000000000000 /* UIListWordCell.m */; };
+		77CEC2D00000000000000000 /* EditWordsController.h in Sources */ = {isa = PBXBuildFile; fileRef = B0DF8CB00000000000000000 /* EditWordsController.h */; };
+		3E78DB140000000000000000 /* EditWordsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 209E7B200000000000000000 /* EditWordsController.m */; };
+		3B8FC7300000000000000000 /* UIWordEdit.h in Sources */ = {isa = PBXBuildFile; fileRef = 74A091100000000000000000 /* UIWordEdit.h */; };
+		3E45F7F80000000000000000 /* UIWordEdit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7049600000000000000000 /* UIWordEdit.m */; };
+		1E2C866A0000000000000000 /* EditWordViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 21BD93080000000000000000 /* EditWordViewController.h */; };
+		13467D740000000000000000 /* EditWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D78A120000000000000000 /* EditWordViewController.m */; };
+		320531F00000000000000000 /* UICustomProgressBar.h in Sources */ = {isa = PBXBuildFile; fileRef = 6B15FBD00000000000000000 /* UICustomProgressBar.h */; };
+		3A1C42060000000000000000 /* UICustomProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAD4EA40000000000000000 /* UICustomProgressBar.m */; };
+		3F2980490000000000000000 /* UIOneCard.h in Sources */ = {isa = PBXBuildFile; fileRef = 2BA8CE700000000000000000 /* UIOneCard.h */; };
+		1CFB33C20000000000000000 /* UIOneCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 208C40600000000000000000 /* UIOneCard.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		25DEEE020000000000000000 /* Wordzilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Wordzilla.app"; path = "Wordzilla.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1961CC2C0000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		3AF76F5F0000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		102AD7F70000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		395BA4000000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		11CD37290000000000000000 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		27009FC10000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		152B60AB0000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		356219500000000000000000 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard.storyboard"; path = "MainStoryboard.storyboard"; sourceTree = "<group>"; };
+		3DB039FE0000000000000000 /* UIListWordCell.xib */ = {isa = PBXFileReference; name = "UIListWordCell.xib"; path = "UI/UIListWordCell.xib"; sourceTree = "<group>"; };
+		1D63E5540000000000000000 /* UIWordEdit_iPhone.xib */ = {isa = PBXFileReference; name = "UIWordEdit_iPhone.xib"; path = "UI/UIWordEdit_iPhone.xib"; sourceTree = "<group>"; };
+		27E428120000000000000000 /* UICustomProgressBar.xib */ = {isa = PBXFileReference; name = "UICustomProgressBar.xib"; path = "UI/UICustomProgressBar.xib"; sourceTree = "<group>"; };
+		17BDFDBD0000000000000000 /* UIOneCard.xib */ = {isa = PBXFileReference; name = "UIOneCard.xib"; path = "UI/UIOneCard.xib"; sourceTree = "<group>"; };
+		35C294520000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		3920BDD40000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		11E5330A0000000000000000 /* WordzillaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "WordzillaViewController.h"; path = "WordzillaViewController.h"; sourceTree = "<group>"; };
+		27189BA20000000000000000 /* WordzillaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "WordzillaViewController.m"; path = "WordzillaViewController.m"; sourceTree = "<group>"; };
+		26E5B8860000000000000000 /* MainPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MainPageViewController.h"; path = "MainPageViewController.h"; sourceTree = "<group>"; };
+		3F774AA00000000000000000 /* MainPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MainPageViewController.m"; path = "MainPageViewController.m"; sourceTree = "<group>"; };
+		1F5DD9120000000000000000 /* UserPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UserPageViewController.h"; path = "UserPageViewController.h"; sourceTree = "<group>"; };
+		349141AA0000000000000000 /* UserPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UserPageViewController.m"; path = "UserPageViewController.m"; sourceTree = "<group>"; };
+		1477D01C0000000000000000 /* TrainingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TrainingViewController.h"; path = "TrainingViewController.h"; sourceTree = "<group>"; };
+		17D5F99E0000000000000000 /* TrainingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "TrainingViewController.m"; path = "TrainingViewController.m"; sourceTree = "<group>"; };
+		309A6ED40000000000000000 /* UIListWordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIListWordCell.h"; path = "UIListWordCell.h"; sourceTree = "<group>"; };
+		95EE40A00000000000000000 /* UIListWordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIListWordCell.m"; path = "UIListWordCell.m"; sourceTree = "<group>"; };
+		B0DF8CB00000000000000000 /* EditWordsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EditWordsController.h"; path = "EditWordsController.h"; sourceTree = "<group>"; };
+		209E7B200000000000000000 /* EditWordsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "EditWordsController.m"; path = "EditWordsController.m"; sourceTree = "<group>"; };
+		74A091100000000000000000 /* UIWordEdit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIWordEdit.h"; path = "UIWordEdit.h"; sourceTree = "<group>"; };
+		1D7049600000000000000000 /* UIWordEdit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIWordEdit.m"; path = "UIWordEdit.m"; sourceTree = "<group>"; };
+		21BD93080000000000000000 /* EditWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EditWordViewController.h"; path = "EditWordViewController.h"; sourceTree = "<group>"; };
+		16D78A120000000000000000 /* EditWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "EditWordViewController.m"; path = "EditWordViewController.m"; sourceTree = "<group>"; };
+		6B15FBD00000000000000000 /* UICustomProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UICustomProgressBar.h"; path = "UICustomProgressBar.h"; sourceTree = "<group>"; };
+		3DAD4EA40000000000000000 /* UICustomProgressBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UICustomProgressBar.m"; path = "UICustomProgressBar.m"; sourceTree = "<group>"; };
+		2BA8CE700000000000000000 /* UIOneCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIOneCard.h"; path = "UIOneCard.h"; sourceTree = "<group>"; };
+		208C40600000000000000000 /* UIOneCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIOneCard.m"; path = "UIOneCard.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F0929700000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15D0BF8E0000000000000000 /* UIKit.framework in Frameworks */,
+				376662C10000000000000000 /* MapKit.framework in Frameworks */,
+				C99CB5900000000000000000 /* Foundation.framework in Frameworks */,
+				4ADA20000000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F229AFE0000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				9BC4F4A00000000000000000 /* Wordzilla */,
+				2D66CD760000000000000000 /* Frameworks */,
+				146F75240000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		146F75240000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25DEEE020000000000000000 /* Wordzilla.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		2D66CD760000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1961CC2C0000000000000000 /* UIKit.framework */,
+				3AF76F5F0000000000000000 /* MapKit.framework */,
+				102AD7F70000000000000000 /* Foundation.framework */,
+				395BA4000000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		9BC4F4A00000000000000000 /* Wordzilla */ = {
+			isa = PBXGroup;
+			children = (
+				35C294520000000000000000 /* AppDelegate.h */,
+				11CD37290000000000000000 /* Default-568h@2x.png */,
+				B0DF8CB00000000000000000 /* EditWordsController.h */,
+				21BD93080000000000000000 /* EditWordViewController.h */,
+				152B60AB0000000000000000 /* Entitlements.plist */,
+				27009FC10000000000000000 /* Info.plist */,
+				26E5B8860000000000000000 /* MainPageViewController.h */,
+				356219500000000000000000 /* MainStoryboard.storyboard */,
+				1477D01C0000000000000000 /* TrainingViewController.h */,
+				6B15FBD00000000000000000 /* UICustomProgressBar.h */,
+				309A6ED40000000000000000 /* UIListWordCell.h */,
+				2BA8CE700000000000000000 /* UIOneCard.h */,
+				74A091100000000000000000 /* UIWordEdit.h */,
+				1F5DD9120000000000000000 /* UserPageViewController.h */,
+				11E5330A0000000000000000 /* WordzillaViewController.h */,
+				121816260000000000000000 /* Supporting Files */,
+				1DC9AB8C0000000000000000 /* UI */,
+			);
+			name = "Wordzilla";
+			sourceTree = "<group>";
+		};
+		1DC9AB8C0000000000000000 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				27E428120000000000000000 /* UICustomProgressBar.xib */,
+				3DB039FE0000000000000000 /* UIListWordCell.xib */,
+				17BDFDBD0000000000000000 /* UIOneCard.xib */,
+				1D63E5540000000000000000 /* UIWordEdit_iPhone.xib */,
+			);
+			name = "UI";
+			sourceTree = "<group>";
+		};
+		121816260000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3920BDD40000000000000000 /* AppDelegate.m */,
+				209E7B200000000000000000 /* EditWordsController.m */,
+				16D78A120000000000000000 /* EditWordViewController.m */,
+				3F774AA00000000000000000 /* MainPageViewController.m */,
+				17D5F99E0000000000000000 /* TrainingViewController.m */,
+				3DAD4EA40000000000000000 /* UICustomProgressBar.m */,
+				95EE40A00000000000000000 /* UIListWordCell.m */,
+				208C40600000000000000000 /* UIOneCard.m */,
+				1D7049600000000000000000 /* UIWordEdit.m */,
+				349141AA0000000000000000 /* UserPageViewController.m */,
+				27189BA20000000000000000 /* WordzillaViewController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A931ED40000000000000000 /* Wordzilla */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B2BC8280000000000000000 /* Build configuration list for PBXNativeTarget "Wordzilla" */;
+			buildPhases = (
+				29A2DDBC0000000000000000 /* Sources */,
+				3F0929700000000000000000 /* Frameworks */,
+				128D7D470000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Wordzilla";
+			productName = "Wordzilla";
+			productReference = 25DEEE020000000000000000 /* Wordzilla.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDFF8FA00000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = CE795B000000000000000000 /* Build configuration list for PBXProject "Wordzilla" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F229AFE0000000000000000;
+			productRefGroup = 146F75240000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A931ED40000000000000000 /* Wordzilla */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		128D7D470000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3C2A8B00000000000000000 /* Default-568h@2x.png in Resources */,
+				236F93230000000000000000 /* Info.plist in Resources */,
+				119A540D0000000000000000 /* Entitlements.plist in Resources */,
+				3FC514F70000000000000000 /* MainStoryboard.storyboard in Resources */,
+				3A1F2D600000000000000000 /* UIListWordCell.xib in Resources */,
+				19D2D8B60000000000000000 /* UIWordEdit_iPhone.xib in Resources */,
+				24531B740000000000000000 /* UICustomProgressBar.xib in Resources */,
+				142CF11F0000000000000000 /* UIOneCard.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29A2DDBC0000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				323187B40000000000000000 /* AppDelegate.h in Sources */,
+				358FB1360000000000000000 /* AppDelegate.m in Sources */,
+				E54266C00000000000000000 /* WordzillaViewController.h in Sources */,
+				23878F040000000000000000 /* WordzillaViewController.m in Sources */,
+				2354ABE80000000000000000 /* MainPageViewController.h in Sources */,
+				3BE63E020000000000000000 /* MainPageViewController.m in Sources */,
+				1BCCCC740000000000000000 /* UserPageViewController.h in Sources */,
+				3100350C0000000000000000 /* UserPageViewController.m in Sources */,
+				10E6C37E0000000000000000 /* TrainingViewController.h in Sources */,
+				1444ED000000000000000000 /* TrainingViewController.m in Sources */,
+				2D0962360000000000000000 /* UIListWordCell.h in Sources */,
+				5CDD76C00000000000000000 /* UIListWordCell.m in Sources */,
+				77CEC2D00000000000000000 /* EditWordsController.h in Sources */,
+				3E78DB140000000000000000 /* EditWordsController.m in Sources */,
+				3B8FC7300000000000000000 /* UIWordEdit.h in Sources */,
+				3E45F7F80000000000000000 /* UIWordEdit.m in Sources */,
+				1E2C866A0000000000000000 /* EditWordViewController.h in Sources */,
+				13467D740000000000000000 /* EditWordViewController.m in Sources */,
+				320531F00000000000000000 /* UICustomProgressBar.h in Sources */,
+				3A1C42060000000000000000 /* UICustomProgressBar.m in Sources */,
+				3F2980490000000000000000 /* UIOneCard.h in Sources */,
+				1CFB33C20000000000000000 /* UIOneCard.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E63C75500000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		2346FD600000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "Wordzilla";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE795B000000000000000000 /* Build configuration list for PBXProject "Wordzilla" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E63C75500000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		1B2BC8280000000000000000 /* Build configuration list for PBXNativeTarget "Wordzilla" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2346FD600000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDFF8FA00000000000000000 /* Project object */;
+}

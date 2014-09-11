@@ -1,15 +1,36 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Wordzilla/UI/UIListWordCell.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.1" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Wordzilla/UI/UIWordEdit.cs" Line="3" Column="3" />
-      <File FileName="Wordzilla/EditWordsController.cs" Line="5" Column="5" />
-      <File FileName="Wordzilla/UserPageViewController.cs" Line="7" Column="7" />
-      <File FileName="Wordzilla/AppApi.cs" Line="23" Column="23" />
-      <File FileName="Wordzilla/UI/UIListWordCell.cs" Line="27" Column="27" />
-      <File FileName="Wordzilla/TrainingViewController.cs" Line="3" Column="3" />
-      <File FileName="Wordzilla/MainPageViewController.cs" Line="41" Column="41" />
+      <File FileName="Wordzilla/UserPageViewController.cs" Line="4" Column="4" />
+      <File FileName="Wordzilla/Storage.cs" Line="1" Column="1" />
+      <File FileName="Wordzilla/AppApi.cs" Line="1" Column="1" />
+      <File FileName="Wordzilla/TrainingViewController.cs" Line="13" Column="13" />
+      <File FileName="Wordzilla/Classes/Sheet_TableModel.cs" Line="16" Column="16" />
+      <File FileName="Wordzilla/Classes/Sheet_MiniModel.cs" Line="16" Column="16" />
+      <File FileName="Wordzilla/UI/UIWordEdit.cs" Line="1" Column="1" />
+      <File FileName="Wordzilla/UI/UIOneCard.cs" Line="3" Column="3" />
+      <File FileName="Wordzilla/UI/UIListWordCell.cs" Line="1" Column="1" />
+      <File FileName="Wordzilla/EditWordsController.cs" Line="21" Column="21" />
+      <File FileName="Wordzilla/EditWordViewController.cs" Line="1" Column="1" />
+      <File FileName="Wordzilla/UI/UIOneCard.designer.cs" Line="3" Column="3" />
+      <File FileName="Wordzilla/UI/UIListWordCell.designer.cs" Line="3" Column="3" />
+      <File FileName="Wordzilla/UI/UIWordEdit.designer.cs" Line="60" Column="60" />
+      <File FileName="Wordzilla/Envi.cs" Line="4" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Wordzilla" expanded="True">
+            <Node name="ComponentReferenceFolder" expanded="True" />
+            <Node name="Classes" expanded="True" />
+            <Node name="UI" expanded="True">
+              <Node name="UIOneCard.xib" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
